@@ -62,28 +62,16 @@ internal class Program
     static void mostrarRepetidos(FilaNumero fila, PilhaNumero pilha)
     {
         int numero = 0;
-        int[] repetidos = new int[10];
-        for (int i = 0; i < 10; i++)
-        {
-            repetidos[i] = fila.getValores(i);
-        }
+
         for (int i = 0; i < 10; i++)
         {
             numero = pilha.getValores(i);
             for (int j = 0; j < 10; j++)
             {
-                if (numero == repetidos[j])
+                if (numero == fila.getValores(j))
                 {
-                    repetidos[j] = repetidos[j] * -1;
+                    Console.WriteLine($"Número repetido: {numero}");
                 }
-            }
-        }
-        Console.WriteLine("Números repetidos:");
-        for (int i = 0; i < 10; i++)
-        {
-            if(repetidos[i] < 0)
-            {
-                Console.WriteLine(repetidos[i] * -1 + " ");
             }
         }
     }
